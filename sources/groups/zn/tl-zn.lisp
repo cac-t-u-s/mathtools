@@ -144,7 +144,7 @@ returns list of t-primeforms)"
 (defun transp-comb-couples (tid n)
   (remove-dup 
   (mapcar #'(lambda (c1) (let ((res (transp-comb c1 tid n)))
-                           (sort. (x-union (first res) (second res)))))
+                           (sort-list (x-union (first res) (second res)))))
    (couples n))
   #'equal
   1
@@ -155,7 +155,7 @@ returns list of t-primeforms)"
 (defun transp-comb-triples (tid n)
   (remove-dup 
   (mapcar #'(lambda (c1) (let ((res (transp-comb c1 tid n)))
-                           (sort. (x-union (x-union (first res) (second res))
+                           (sort-list (x-union (x-union (first res) (second res))
                                            (third res)))))
    (triples n))
   #'equal
@@ -182,7 +182,7 @@ returns list of t-primeforms)"
 ;(get-tid 12)
 
 (defun all-union (sets)
-  (sort. (reduce #'x-union sets))
+  (sort-list (reduce #'x-union sets))
   )
 ;(all-union '((0 1 2 3 7) (0 1 2 4) (0 1 2 3) (15)))
 

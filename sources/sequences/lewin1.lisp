@@ -74,7 +74,7 @@
   (if (listp (car set))
     (loop for el in set collect (j el))
     
-    (let* ((ss (sort. set))
+    (let* ((ss (sort-list set))
            (nd (remove-duplicates ss))
            (int (x->dx (append nd (om+ 12 (first-n nd 2)))))
            (i3 (position 3 int)))
